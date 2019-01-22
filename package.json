@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/edneyRoldao/cursos-node-alura#readme",
   "dependencies": {
+    "ejs": "^2.6.1",
     "express": "^4.16.4"
   }
 }
