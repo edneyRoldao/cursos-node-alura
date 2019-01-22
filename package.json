@@ -1,0 +1,23 @@
+{
+  "name": "alura-app-01",
+  "version": "1.0.0",
+  "description": "projeto node curso alura 1",
+  "main": "server-url.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edneyRoldao/cursos-node-alura.git"
+  },
+  "author": "edney",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edneyRoldao/cursos-node-alura/issues"
+  },
+  "homepage": "https://github.com/edneyRoldao/cursos-node-alura#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
