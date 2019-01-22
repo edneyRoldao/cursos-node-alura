@@ -1,13 +1,7 @@
 let porta = 3000;
 let app = require('./config/express')();
 
-// a pasta views nao precisa ser referenciada pois o ejs vai procurar as nossos paginas a partir dela
-app.get('/produtos', (req, res) => {
-    res.render('produtos/lista_produtos');
-});
-
-app.get('/home', (req, res) => {
-    res.send('<html><body><h1>Bem Vindo !</h1></body></html>');
-});
+// vamos passar o express como parametro para o modulo de rotas
+let prodRoutes = require('./app/routes/produto.routes') (app);
 
 app.listen(porta, () => console.log('Servidor rodando na porta: ', porta));

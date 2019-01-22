@@ -19,3 +19,10 @@ Branch: ejs_engine <br>
 - ver: views/produtos.ejs, config/express.js e app.js na config das rotas
 - instalando o ejs no como uma nova dependencia do projeto: npm install ejs -save
 <br><br>
+
+Branch: isolando_rotas <br>
+- Vamos remover as configuracoes das nossas rotas(urls) do arquivo principal (app.js)
+- ver: app/routes/produtos.js, config/express.js
+- vamos criar a pasta app e colocar os arquivos do projeto nela.
+- ensinar o express a encontrar a pasta views.
+<br><br>
