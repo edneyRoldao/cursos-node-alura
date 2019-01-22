@@ -26,3 +26,10 @@ Branch: isolando_rotas <br>
 - vamos criar a pasta app e colocar os arquivos do projeto nela.
 - ensinar o express a encontrar a pasta views.
 <br><br>
+
+Branch: acessando_database <br>
+- Vamos conectar o node com o banco de dados mySQL.
+- precisamos instalar o driver do mySql via npm:
+- npm install mysql -save
+- vamos montar a lista dinamicamente e exibir na tela
+<br><br>
