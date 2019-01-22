@@ -33,3 +33,9 @@ Branch: acessando_database <br>
 - npm install mysql -save
 - vamos montar a lista dinamicamente e exibir na tela
 <br><br>
+
+
+Branch: isolando_banco <br>
+- Vamos uma connection factory.
+- ver: app/infra/connectionFactory.js, app/routes/...
+<br><br>
