@@ -34,8 +34,13 @@ Branch: acessando_database <br>
 - vamos montar a lista dinamicamente e exibir na tela
 <br><br>
 
-
 Branch: isolando_banco <br>
 - Vamos uma connection factory.
 - ver: app/infra/connectionFactory.js, app/routes/...
+<br><br>
+
+Branch: carregamento_modulos <br>
+- Vamos utilizar uma api que vai facilitar o importacao dos nossos modulos (express-load).
+- npm install express-load --save
+- ver: config/express.js, app.js, app/routes/prod...
 <br><br>

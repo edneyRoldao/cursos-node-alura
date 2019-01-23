@@ -1,10 +1,9 @@
-let getConnection = require('../infra/connectionFactory');
+// nao precisamos mais usar o require para importar os modulos, pois 
+// eles estao sendo carregados dentro do express.js por meio do express-load
 
-// podemos passar as configuracoes de um modulo para dentro de outro 
-// passado o mesmo como argumento. Nesse caso teremos o express como argumento.
 module.exports = (app) => {
     app.get('/produtos', (req, res) => {
-        let conn = getConnection();
+        let conn = app.infra.connectionFactory();
 
         conn.query('SELECT * FROM livro', (err, result) => {
             res.render('produtos/lista_produtos', {lista: result});

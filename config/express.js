@@ -1,22 +1,31 @@
-// Arquivo de configuracao do servidor EXPRESS
+/**
+ * Adicionando o express-load ao projeto.
+ * 
+ * O express-load e utilizado para carregar nossos modulos sem a necessidade de utilizar o require
+ * demasiadamente
+ * 
+ */
 
-// Obs: a funcao que carraga o objeto com os dados do express, ja esta sendo invocada.
- let app = require('express')();
+let express = require('express');
+let load = require('express-load');
 
-// adicionando configuracoes da engine que vai renderizar as nossas paginas HTML
-// por padrao as nossas paginas devem ser criadas a partir da pasta 
-// views que deve ser criada na raiz do projeto
-app.set('view engine', 'ejs');
-
-// Como nos movemos a pasta views para dentro da pasta app,
-// precisamos ensinar o express como ele vai entrar tal pasta.
-// obs: quando colocar ./ no inicio dos caminhos, estamos dizendo para a busca
-// ser iniciado a partir da raiz do projeto, que sempre definido pelo local onde o
-// arquivo package.json esta.
-app.set('views', './app/views');
-
- // deixando o express acessivel externamente
  module.exports = () => {
     console.log('Carregando modulo do express');
+
+    let app = express();
+
+    app.set('view engine', 'ejs');
+    app.set('views', './app/views');
+
+    // vamos apontar os estao a nossas rotas para serem carregadas de forma facilitada se o uso do require
+    // utilizamos a prop cwd para ensinar o load-express a partir de onde ele ira procurar a pasta routes e infra
+    // Agora, a variavel app possui todos os modulos prensentes na pasta routes e infra.
+    // A ordem das pastas aqui sao importantes (como routes depende de infra, entao routes deve ser carregado primeiro)
+    // Obs: o express-load invoca a funcao do module.export dos modulos, entao coisa como a criacao de conexao com o banco
+    //      devem ser empacotadas em uma funcao interna para que nao se crie uma connection o modulo é carregado.
+    load('routes', {cwd: 'app'})
+        .then('infra')
+        .into(app);
+
     return app;
  };
