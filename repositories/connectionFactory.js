@@ -9,7 +9,4 @@ function getConnection () {
      });
 };
 
-// wrapper
-module.exports = () => {
-    return getConnection;
-};
+module.exports = () => getConnection;

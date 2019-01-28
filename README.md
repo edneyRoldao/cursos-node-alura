@@ -44,3 +44,22 @@ Branch: carregamento_modulos <br>
 - npm install express-load --save
 - ver: config/express.js, app.js, app/routes/prod...
 <br><br>
+
+Branch: isolando-acesso-db <br>
+- Primeiramente, foi feito uma refatoracao na aplicacao (estrutura fora do padrao)
+    -> app.js passou a se chamar index.js e os comentarios foram removidos
+    -> o package.json foi atualizado (compara com as branches anteriores)
+    -> foi removido o express-load pois agora vamos utilizar o consign
+    -> a pasta node_modules foi removida para ajustar a troca das dependencias
+    -> a pasta draft foi removida
+    -> o ejs tbm foi removido
+    -> o express.js foi totalmente refatorado
+    -> npm install consign --save
+    -> algumas pastas foram adicionadas e outras removidas
+    -> produto.controller.js foi modificado
+- Foi adicionado um novo end point (post)
+- Foi instalado a dependencia body-parser que ensina o express a converter os dados no formato desejado (no caso json)
+- npm install body-parser --save
+- Foi adicionado o arquivo produto.repository.js que encapsula as operacoes de acesso ao banco. Com isso, o controller foi alterado tbm
+
+<br><br>
