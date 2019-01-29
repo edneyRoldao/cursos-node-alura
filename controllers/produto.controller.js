@@ -11,6 +11,26 @@ module.exports = (app) => {
     });
 
     app.post('/novo/produto', function(req, res) {
+
+        // vamos validar a consistencia dos campos
+        // no console do mySql faca o comando: desc livro;
+        req.assert('titulo', 'titulo is required')
+           .notEmpty();
+
+        req.assert('descricao', 'descricao is required')
+           .notEmpty();
+
+        req.assert('preco', 'preco must be a decimal value')
+           .isFloat();
+        
+        let errors = req.validationErrors();
+
+        if (errors) {
+            console.log('Erros de validacao encontrados');
+            res.status(400).send(errors);
+            return;
+        }
+
         let produto = req.body;
         let prodRepository = _getProdutoRepository(app);
 
@@ -32,19 +52,3 @@ function _getProdutoRepository(app) {
     let conn = app.repositories.connectionFactory();
     return new app.repositories.ProdutoRepository(conn);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//   

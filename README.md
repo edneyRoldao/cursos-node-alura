@@ -72,7 +72,15 @@ Branch: salvado-produto-db <br>
 
 <br><br>
 
+Branch: validando-entrada <br>
+- Vamos adicionar novo dependencia (lib de library) para validacao: npm install express-validator --save
+- Vamos ensinar o express a usar esse cara (express.js)
+- Vamos criar as validacoes para o endpoint que insere um produto (produto.controller.js)
 
+Para testar com errors
+curl http://localhost:3000/novo/produto -X POST -v -H "Content-type: application/json" -d '{"titulo": "", "descricao": "meu primeiro livro", "preco": "sdf"}' ; echo
+
+<br><br>
 
 
 
