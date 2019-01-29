@@ -82,5 +82,10 @@ curl http://localhost:3000/novo/produto -X POST -v -H "Content-type: application
 
 <br><br>
 
+Branch: alterando-produto <br>
+- Vamos utilizar o conceito de pathParam
+- Vamos criar o put no controller
+- vamos implementar as queries de read e update no repository.
+<br><br>
 
 

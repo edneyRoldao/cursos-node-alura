@@ -46,6 +46,23 @@ module.exports = (app) => {
         });
     });
 
+    app.put('/alterar/produto/:id', (req, res) => {
+        let produto = req.body;
+        produto.id = req.params.id;
+
+        let prodRepository = _getProdutoRepository(app);
+
+        prodRepository.update(produto, (error) => {
+            if (error) {
+                res.status(500).send(error);
+                return;
+            }
+
+            console.log('produto alterado com sucesso');
+        });
+
+    });
+
 };
 
 function _getProdutoRepository(app) {
