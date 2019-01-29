@@ -61,5 +61,18 @@ Branch: isolando-acesso-db <br>
 - Foi instalado a dependencia body-parser que ensina o express a converter os dados no formato desejado (no caso json)
 - npm install body-parser --save
 - Foi adicionado o arquivo produto.repository.js que encapsula as operacoes de acesso ao banco. Com isso, o controller foi alterado tbm
+<br><br>
+
+Branch: salvado-produto-db <br>
+- criacao do produto de ponta-a-ponta (do controller ao banco)
+- ver produto.controller e ProdutoRepository
+- url para testar:
+
+  curl http://localhost:3000/novo/produto -X POST -v -H "Content-type: application/json" -d '{"titulo": "meu livro", "descricao": "meu primeiro livro", "preco": 10.5}' ; echo
 
 <br><br>
+
+
+
+
+

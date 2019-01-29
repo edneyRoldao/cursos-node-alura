@@ -1,8 +1,7 @@
 module.exports = (app) => {
     
     app.get('/produtos', (req, res) => {
-        let conn = app.repositories.connectionFactory();
-        let prodRepository = new app.repositories.ProdutoRepository(conn);
+        let prodRepository = _getProdutoRepository(app);
 
         prodRepository.listarProdutos((error, result) => {
             res.send(result);
@@ -13,14 +12,39 @@ module.exports = (app) => {
 
     app.post('/novo/produto', function(req, res) {
         let produto = req.body;
+        let prodRepository = _getProdutoRepository(app);
 
-        // so vai exibir se o body-parser estiver configurado
-        console.log(produto);
+        prodRepository.create(produto, (error, result) => {
+            if (error) {
+                console.log('ocorreu um erro ao inserir os dados no banco');                
+                res.status(400).send(error);
 
-        res.send('request recebido');
+            } else {
+                res.status(201).send('produto inserido com sucesso');
+            }
+
+        });
     });
 
-    // comando para testar o endpoint acima via terminal
-    // curl http://localhost:3000/novo/produto -X POST -v -H "Content-type: application/json" -d '{"nome": "teste", "valor": 15}' ; echo    
 };
 
+function _getProdutoRepository(app) {
+    let conn = app.repositories.connectionFactory();
+    return new app.repositories.ProdutoRepository(conn);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   
