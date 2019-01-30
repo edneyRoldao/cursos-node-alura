@@ -100,3 +100,13 @@ Branch: consumindo um servico <br>
 - Vamos adicionar a pasta services ao consign em config/express.js
 - Vamos criar um endpoint nosso para chamar o servico que criamos em controllers/correios.controller.js
 <br><br>
+
+Branch: consumindo-ws-soap <br>
+- Vamos instalar o modulo soap (npm install soap --save)
+- Vamos criar mais um servico PrazoEntregaService.js
+- Vamos criar novo endpoint no controller
+- Vamos 
+- Vamos 
+- Vamos 
+<br><br>
+

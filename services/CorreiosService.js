@@ -13,6 +13,4 @@ CorreiosClient.prototype.getCep = (cep, callback) => {
     client.get(path, callback);
 }
 
-module.exports = () => {
-    return CorreiosClient;
-};
+module.exports = () => CorreiosClient;

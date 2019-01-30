@@ -7,4 +7,25 @@ module.exports = (app) => {
             res.send(result);
         })
     });
+
+    app.get('/correios/calculo-prazo', (req, res) => {
+        let dadosEntrega = {
+            'nCdServico': '40010',
+            'sCepOrigem': '02343030',
+            'sCepDestino': '04101300'
+        }
+    
+        let correiosSOAPService = new app.services.PrazoEntregaService();
+
+        correiosSOAPService.calculaPrazo(dadosEntrega, (error, result) => {
+            if (error) {
+                res.status(500).send(error);
+                return;
+            }
+
+            console.log('prazo calculado');
+            res.json(result);
+        });
+
+    });
 }
