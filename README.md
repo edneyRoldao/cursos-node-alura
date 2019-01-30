@@ -88,4 +88,9 @@ Branch: alterando-produto <br>
 - vamos implementar as queries de read e update no repository.
 <br><br>
 
+Branch: obtendo-produto <br>
+- Vamos recuperar um produto pelo id
+- Vamos adicionar nova funcao no controller.
+- O query ja foi criada no exemplo do POST dentro do repository
+<br><br>
 

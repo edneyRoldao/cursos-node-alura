@@ -1,9 +1,30 @@
 module.exports = (app) => {
     
+    app.get('/produtos/:id', (req, res) => {
+        let id = req.params.id;
+        let prodRepository = _getProdutoRepository(app);
+
+        prodRepository.read(id, (error, result) => {
+
+            if (error) {
+                res.status(400).send(error);
+                return;
+            }
+
+            res.send(result);
+        });
+    });
+
     app.get('/produtos', (req, res) => {
         let prodRepository = _getProdutoRepository(app);
 
         prodRepository.listarProdutos((error, result) => {
+
+            if (error) {
+                res.status(500).send(error);
+                return;
+            }
+
             res.send(result);
         });
 
