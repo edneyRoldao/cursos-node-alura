@@ -94,3 +94,9 @@ Branch: obtendo-produto <br>
 - O query ja foi criada no exemplo do POST dentro do repository
 <br><br>
 
+Branch: consumindo um servico <br>
+- Vamos instalar o restify-clients (npm install restify-clients --save)
+- Vamos criar uma pasta para os servicos (services) e o arquivo correios.service.js
+- Vamos adicionar a pasta services ao consign em config/express.js
+- Vamos criar um endpoint nosso para chamar o servico que criamos em controllers/correios.controller.js
+<br><br>

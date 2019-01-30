@@ -17,6 +17,7 @@ let expressValidator = require('express-validator');
     consign()
         .include('controllers')
         .then('repositories')
+        .then('services')
         .into(app);
 
     return app;
