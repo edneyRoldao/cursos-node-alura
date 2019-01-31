@@ -105,8 +105,17 @@ Branch: consumindo-ws-soap <br>
 - Vamos instalar o modulo soap (npm install soap --save)
 - Vamos criar mais um servico PrazoEntregaService.js
 - Vamos criar novo endpoint no controller
-- Vamos 
-- Vamos 
-- Vamos 
 <br><br>
 
+Branch: streaming-dados-01 <br>
+- Vamos inplementar a leitura de um arquivo
+- Vamos criar a pasta utils e usar o modulo fs do node
+- Vamos adicionar uma imagem na pasta utils para os testes
+- Vamos criar o arquivo fileReader.js em utils
+- essa branch e so um teste inicial
+- vamos passar a processar I/O sem deixar arquivos grandes em memoria
+<br><br>
+
+Branch: streaming-dados-02 <br>
+- Vamos criar o arquivo streamFileReader.js para comparar com o exemplo anterior
+<br><br>
