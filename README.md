@@ -119,3 +119,14 @@ Branch: streaming-dados-01 <br>
 Branch: streaming-dados-02 <br>
 - Vamos criar o arquivo streamFileReader.js para comparar com o exemplo anterior
 <br><br>
+
+Branch: recebendo-arquivo-api <br>
+- Vamos implementar um endpoint que recebe um arquivo
+- para fazer o teste do endpoint:
+  curl -X POST http://localhost:3000/upload/imagem --data-binary @imagem.jpeg -H "Content-type: application/octet-stream" -H "filename: imagem.jpeg"
+- uilizar um -v para verificar os dados da request, atencao para o campo 100continue
+- 100continue e uma reposta em servidor e cliente confirmando o recebimento do arquivo
+- Vamos criar o arquivo upload.controller.js e implementar a nova rota.
+- Vamos criar a pasta files para armazenar nossos arquivos.
+- Obs: o comando curl deve ser executado no mesmo local da imagem a ser upada.
+<br><br>
