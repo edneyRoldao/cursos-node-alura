@@ -27,14 +27,10 @@ module.exports = (app) => {
 
             res.send(result);
         });
-
-        conn.end();
     });
 
     app.post('/novo/produto', function(req, res) {
-
-        // vamos validar a consistencia dos campos
-        // no console do mySql faca o comando: desc livro;
+        
         req.assert('titulo', 'titulo is required')
            .notEmpty();
 
@@ -63,7 +59,6 @@ module.exports = (app) => {
             } else {
                 res.status(201).send('produto inserido com sucesso');
             }
-
         });
     });
 
@@ -81,7 +76,6 @@ module.exports = (app) => {
 
             console.log('produto alterado com sucesso');
         });
-
     });
 
 };

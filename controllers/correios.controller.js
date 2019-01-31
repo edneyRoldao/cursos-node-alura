@@ -9,12 +9,16 @@ module.exports = (app) => {
     });
 
     app.get('/correios/calculo-prazo', (req, res) => {
+        let codigoServico = 40010;
+        
         let dadosEntrega = {
-            'nCdServico': '40010',
-            'sCepOrigem': '02343030',
-            'sCepDestino': '04101300'
+            'nCdServico': codigoServico,
+            'sCepOrigem': req.query.origem,
+            'sCepDestino': req.query.destino
         }
     
+        console.log(dadosEntrega);
+
         let correiosSOAPService = new app.services.PrazoEntregaService();
 
         correiosSOAPService.calculaPrazo(dadosEntrega, (error, result) => {
