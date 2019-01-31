@@ -27,8 +27,6 @@ module.exports = (app) => {
 
             res.send(result);
         });
-
-        conn.end();
     });
 
     app.post('/novo/produto', function(req, res) {
