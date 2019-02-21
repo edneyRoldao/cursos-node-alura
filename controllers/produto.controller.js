@@ -18,15 +18,18 @@ module.exports = (app) => {
     app.get('/produtos', (req, res) => {
         let prodRepository = _getProdutoRepository(app);
 
-        prodRepository.listarProdutos((error, result) => {
+        let t = 'asdasdfas';
 
-            if (error) {
-                res.status(500).send(error);
-                return;
-            }
+        prodRepository.listarProdutosTest().then(r => {
 
-            res.send(result);
+            prodRepository.read(r[0].id, (e, r) => {
+                // console.log(r);
+                // console.log(t);
+                
+            })
+
         });
+        
     });
 
     app.post('/novo/produto', function(req, res) {
@@ -64,17 +67,13 @@ module.exports = (app) => {
 
     app.put('/alterar/produto/:id', (req, res) => {
         let produto = req.body;
-        produto.id = req.params.id;
-
+        let id = req.params.id;
         let prodRepository = _getProdutoRepository(app);
 
-        prodRepository.update(produto, (error) => {
-            if (error) {
-                res.status(500).send(error);
-                return;
-            }
-
-            console.log('produto alterado com sucesso');
+        prodRepository.read(id, (error, result) => {
+            let finalProd = Object.assign({}, result[0], produto);
+            prodRepository.update(finalProd, (error) => {
+            });    
         });
     });
 

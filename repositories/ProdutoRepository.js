@@ -21,4 +21,15 @@ ProdutoRepository.prototype.read = (id, callback) => {
     conn.query('SELECT * FROM livro WHERE id = ?', [id], callback);
 };
 
+// test return result
+ProdutoRepository.prototype.listarProdutosTest = () => {
+    return new Promise( (resolve, reject) => {
+        conn.query('SELECT * FROM livro', (e, r) => {
+            if (e) return reject(e);
+            resolve(r);
+        });
+    });
+};
+
+
 module.exports = () => ProdutoRepository;
